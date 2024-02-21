@@ -19,18 +19,18 @@ public class Concesionario {
 
 	// Calcular media de precio de coches (Map x2) -- Manuel
 
-	public OptionalDouble calcularMediaPrecioCochesPorMarca(String modelo) {
+	public OptionalDouble calcularMediaPrecioCoches() {
 
 		return cc.getListaCoche().stream().mapToDouble(t -> t.getPrecio()).average();
 	}
 
 	// Calcular media de precio de los coches de una marca (FlatMap) -- Manuel
 
-	public OptionalDouble calcularMedia() {
-
-		return 0.0;
-
-	}
+//	public OptionalDouble calcularMediaPrecioPorModelo(String modelo) {
+//
+//		return cc.getListaCoche().stream().flatMap(coche -> coche.().stream());
+//
+//	}
 
 	// método sumar ganancias si se vende vehículo -- Victor
 }
