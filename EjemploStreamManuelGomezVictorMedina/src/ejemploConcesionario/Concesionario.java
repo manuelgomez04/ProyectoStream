@@ -1,5 +1,7 @@
 package ejemploConcesionario;
 
+import java.util.Comparator;
+import java.util.List;
 import java.util.OptionalDouble;
 
 public class Concesionario {
@@ -35,4 +37,22 @@ public class Concesionario {
 //	}
 
 	// método sumar ganancias si se vende vehículo -- Victor
+
+	// Método para ordenar la lista de coches dada por el precio.
+
+	public List<Coche> ordenarPorPrecioMayorAMenor() {
+		Comparator<Coche> compararPrecios = Comparator.comparing(Coche::getPrecio);
+
+		return crudCoche.getListaCoche().stream().sorted(compararPrecios).toList();
+	}
+
+	// Método para ordenar la lista de coches dadapor la marca y el modelo
+
+	public List<Coche> ordenarPorOrdenAlfabeticoMarcaYModelo() {
+		Comparator<Coche> compararMarcaYModelo = Comparator.comparing(Coche::getMarca)
+				.thenComparing(Comparator.comparing(Coche::getModelo));
+
+		return crudCoche.getListaCoche().stream().sorted(compararMarcaYModelo).toList();
+
+	}
 }

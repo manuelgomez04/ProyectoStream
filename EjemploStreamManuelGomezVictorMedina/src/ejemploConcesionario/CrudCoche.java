@@ -1,6 +1,5 @@
 package ejemploConcesionario;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class CrudCoche {
@@ -46,8 +45,6 @@ public class CrudCoche {
 		listaCoche.stream().forEach(System.out::println);
 	}
 
-	// Buscar numBastidor, modelo -- Manuel
-
 	// Método para buscar un coche por su número de bastidor
 
 	public Coche findByNumBastidor(String numBastidor) {
@@ -72,24 +69,6 @@ public class CrudCoche {
 	public List<Coche> findListaModelosSkipN(String modelo, int skip) {
 
 		return listaCoche.stream().filter(coche -> coche.getModelo().equalsIgnoreCase(modelo)).skip(skip).toList();
-	}
-
-	// Método para ordenar la lista de coches dada por el precio.
-
-	public List<Coche> ordenarPorPrecioMayorAMenor() {
-		Comparator<Coche> compararPrecios = Comparator.comparing(Coche::getPrecio);
-
-		return listaCoche.stream().sorted(compararPrecios).toList();
-	}
-
-	// Método para ordenar la lista de coches dadapor la marca y el modelo
-
-	public List<Coche> ordenarPorOrdenAlfabeticoMarcaYModelo() {
-		Comparator<Coche> compararMarcaYModelo = Comparator.comparing(Coche::getMarca)
-				.thenComparing(Comparator.comparing(Coche::getModelo));
-
-		return listaCoche.stream().sorted(compararMarcaYModelo).toList();
-
 	}
 
 	// marca ( filter, find Any / First) -- Víctor
