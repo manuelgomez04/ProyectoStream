@@ -35,9 +35,9 @@ public class CrudCoche {
 	}
 
 	// Borrar coche --Víctor
-	public void borrarCoche(Coche coche) {
+	public void borrarCoche(String numBastidor) {
 
-		listaCoche.remove(coche);
+		listaCoche.remove(findByNumBastidor(numBastidor));
 	}
 
 	// Mostrar coches (For each)-- Víctor
