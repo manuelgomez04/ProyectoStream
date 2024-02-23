@@ -19,15 +19,7 @@ public class Principal {
 		String marca, modelo, numBastidor, leerExtras;
 		double caballos, precio;
 		boolean extras, vendido = false;
-<<<<<<< HEAD
-		int opcion, opcion2, LeerVendido, opcion3, limit, skip, opcionExtras;
-		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
-		Coche coche3 = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
-		Coche coche4 = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
-		Coche coche5 = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
-=======
-		int opcion, opcion2, LeerExtras, LeerVendido, opcion3, limit, skip;
->>>>>>> 86bca276caeaea4243e89dd2ca970a1620d9818d
+		int opcion, opcion2 , opcion3, limit, skip;
 
 		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
 		Coche coche1 = new Coche("Audi", "A4", "43643Y", 390, 250000, listaExtra, true);
