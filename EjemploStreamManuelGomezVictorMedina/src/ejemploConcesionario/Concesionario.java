@@ -36,8 +36,6 @@ public class Concesionario {
 //
 //	}
 
-	// método sumar ganancias si se vende vehículo -- Victor
-
 	// Método para ordenar la lista de coches dada por el precio.
 
 	public List<Coche> ordenarPorPrecioMayorAMenor() {
