@@ -20,13 +20,13 @@ public class Principal {
 		double caballos, precio;
 		boolean extras, vendido = false;
 		int opcion, opcion2, LeerExtras, LeerVendido, opcion3, limit, skip;
-		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
-		Coche coche3 = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
-		Coche coche4 = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
-		Coche coche5 = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
 
+		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
 		Coche coche1 = new Coche("Audi", "A4", "43643Y", 390, 250000, listaExtra, true);
 		Coche coche2 = new Coche("Peugeot", "P5", "7623U", 600, 590000, listaExtra, true);
+		Coche coche3 = new Coche("Seat", "Ibiza", "7923R", 450, 400000, listaExtra, false);
+		Coche coche4 = new Coche("Seat", "Leon", "1630L", 450, 400000, listaExtra, false);
+		Coche coche5 = new Coche("Seat", "Leon", "0258G", 450, 400000, listaExtra, true);
 
 		crudCoche.addCoche(coche);
 		crudCoche.addCoche(coche1);
