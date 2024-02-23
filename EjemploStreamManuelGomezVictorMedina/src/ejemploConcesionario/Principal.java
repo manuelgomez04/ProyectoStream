@@ -35,6 +35,7 @@ public class Principal {
 					5 ---> Calcular el precio medio de los coches de una marca
 					6 ---> Ordenar coches por requisitos
 					7 ---> Borrar un coche
+					8-
 					""");
 			opcion = Leer.datoInt();
 			switch (opcion) {
