@@ -1,34 +1,87 @@
 package ejemploConcesionario;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
+
+import utilidades.Leer;
 
 public class Principal {
 
 	public static void main(String[] args) {
 
-		String  aux;
-		int opcion;
-		Scanner sc = new Scanner (System.in);
-		
-		
+		List<Coche> listaCoches = new ArrayList<Coche>();
+		CrudCoche crudCoche = new CrudCoche(listaCoches);
+		Concesionario concesionario = new Concesionario(crudCoche);
+
+		String marca, modelo, numBastidor;
+		double caballos, precio;
+		boolean extras, vendido = false;
+		int opcion, LeerExtras, LeerVendido;
+		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, true, false);
+		Coche coche1 = new Coche("Audi", "A4", "43643Y", 390, 250000, false, true);
+		Coche coche2 = new Coche("Peugeot", "P5", "7623U", 600, 590000, true, true);
+
+		crudCoche.addCoche(coche);
+		crudCoche.addCoche(coche1);
+		crudCoche.addCoche(coche2);
+		crudCoche.mostrarCoches();
+
 		do {
 			System.out.println("""
 					0 ---> Salir
 					1 ---> Añadir un coche al concesionario
-					2 ---> Mostrar los coches del concesionario
-					3 ---> Calcular ganancias si se venden todos los coches
+					2 ---> Mostrar los coches del concesionario(Todos los mostrar)
+					3 ---> Calcular ganancias totales
 					4 ---> Contar los coches vendidos
 					5 ---> Calcular el precio medio de los coches de una marca
 					6 ---> Ordenar coches por requisitos
 					""");
-			
-			
-			aux = sc.nextLine();
-			opcion =  Integer.parseInt(aux);
-			
-			
+			opcion = Leer.datoInt();
+			switch (opcion) {
+			case 1:
+				System.out.println("Introduzca la marca del coche");
+				marca = Leer.dato();
+				System.out.println("Introduzca el modelo");
+				modelo = Leer.dato();
+				System.out.println("Introduzca el número de bastidor");
+				numBastidor = Leer.dato();
+				System.out.println("Introduzca los caballos que tiene el coche");
+				caballos = Leer.datoDouble();
+				System.out.println("Introduzca el precio del coche");
+				precio = Leer.datoDouble();
+				System.out.println("El coche tiene extras 1-Si 2-No");
+				LeerExtras = Leer.datoInt();
+				while (LeerExtras != 1 && LeerExtras != 2) {
+					System.out.println("Introduzca una opción correcta");
+					LeerExtras = Leer.datoInt();
+				}
+				if (LeerExtras == 1) {
+					extras = true;
+				} else {
+					extras = false;
+				}
+				coche = new Coche(marca, modelo, numBastidor, caballos, precio, extras, vendido);
+				crudCoche.addCoche(coche);
+				break;
+			case 2:
+
+				break;
+			case 3:
+				
+				if()
+				System.out.println("Las ganancias totales");
+				concesionario.calcularGanancias();
+				break;
+			case 4:
+				break;
+			case 5:
+				break;
+			case 6:
+				break;
+			}
+
 		} while (opcion != 0);
-		
+
 	}
 
 }

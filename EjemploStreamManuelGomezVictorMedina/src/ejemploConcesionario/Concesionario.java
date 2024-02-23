@@ -8,6 +8,19 @@ public class Concesionario {
 
 	private CrudCoche crudCoche;
 
+	public Concesionario(CrudCoche crudCoche) {
+		super();
+		this.crudCoche = crudCoche;
+	}
+
+	public CrudCoche getCrudCoche() {
+		return crudCoche;
+	}
+
+	public void setCrudCoche(CrudCoche crudCoche) {
+		this.crudCoche = crudCoche;
+	}
+
 	// Contar vehículos vendidos (Count) --Víctor
 	public long contarCocheVendidos() {
 
