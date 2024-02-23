@@ -31,7 +31,7 @@ public class Principal {
 					0 ---> Salir
 					1 ---> Añadir un coche al concesionario
 					2 ---> Mostrar los coches del concesionario(Todos los mostrar)
-					3 ---> Calcular ganancias totales
+					3 ---> Calcular ganancias si se venden todos los coches
 					4 ---> Contar los coches vendidos
 					5 ---> Calcular el precio medio de los coches de una marca
 					6 ---> Ordenar coches por requisitos
@@ -62,19 +62,26 @@ public class Principal {
 				}
 				coche = new Coche(marca, modelo, numBastidor, caballos, precio, extras, vendido);
 				crudCoche.addCoche(coche);
+				System.out.println();
 				break;
 			case 2:
 
 				break;
 			case 3:
-				
-				if()
-				System.out.println("Las ganancias totales");
-				concesionario.calcularGanancias();
+
+				System.out.printf("Las ganancias totales son: %.2f", concesionario.calcularGanancias());
+				System.out.println();
+
 				break;
 			case 4:
+				concesionario.contarCocheVendidos();
 				break;
 			case 5:
+				System.out.println("Intoduzca la marca para calcular el precio medio");
+				marca = Leer.dato();
+				System.out.println("El precio medio de los coches de la marca es: %.2f",
+						concesionario.calcularMediaPrecioCoches(marca));
+
 				break;
 			case 6:
 				break;
