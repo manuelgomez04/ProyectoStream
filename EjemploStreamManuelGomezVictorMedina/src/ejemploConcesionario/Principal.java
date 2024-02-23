@@ -16,10 +16,10 @@ public class Principal {
 		CrudCoche crudCoche = new CrudCoche(listaCoches);
 		Concesionario concesionario = new Concesionario(crudCoche);
 
-		String marca, modelo, numBastidor;
+		String marca, modelo, numBastidor, leerExtras;
 		double caballos, precio;
 		boolean extras, vendido = false;
-		int opcion, opcion2, LeerExtras, LeerVendido, opcion3, limit, skip;
+		int opcion, opcion2, LeerVendido, opcion3, limit, skip, opcionExtras;
 		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
 		Coche coche3 = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
 		Coche coche4 = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
@@ -35,6 +35,22 @@ public class Principal {
 		crudCoche.addCoche(coche4);
 		crudCoche.addCoche(coche5);
 
+		// Enunciado
+
+		// Tenemos un concesionario, en el cual venderemos coches de distintas marcas,
+		// modelos... Cada coche tiene un Número de bastidor, que lo identifica, el
+		// precio que costará, los caballos...
+		// Nuestro concesionario estará formado por una lista de coches. El programa
+		// debe poder realizar las siguientes operaciones:
+		// Añadir un coche al concesionario, mostrar los coches siguiendo diferentes
+		// requisitos ( marca, modelo, limitando el número de resultados y saltando una
+		// cantidad dada, también por marca y modelo. Debemos poder calcular las
+		// ganancias totales si se venden todos los coches, contar el número de los
+		// coches vendidos, calcular el precio medio de los coches de una marca,
+		// ordenar los coches por varios requisitos (orden alfabético de la marca y
+		// modelo y por el precio), un método que mostrará el coche y sus extras y un
+		// método collect.
+
 		do {
 			System.out.println("""
 					0 ---> Salir
@@ -46,6 +62,7 @@ public class Principal {
 					6 ---> Ordenar coches por requisitos
 					7 ---> Borrar un coche
 					8 ---> FlatMap (No sé aún)
+					9 ---> Modificar precio de un coche
 					""");
 			opcion = Leer.datoInt();
 			switch (opcion) {
@@ -62,7 +79,12 @@ public class Principal {
 				precio = Leer.datoDouble();
 
 				// Hay que poner los extras bien.
-				System.out.println("El coche tiene puertas 1-Si 2-No");
+				System.out.println("El coche tiene los asientos tapizados 1-Si 2-No");
+				leerExtras = Leer.dato();
+
+				if (leerExtras.&& leerExtras.equalsIgnoreCase("2")) {
+					
+				}
 
 				coche = new Coche(marca, modelo, numBastidor, caballos, precio, listaExtra, vendido);
 				crudCoche.addCoche(coche);
