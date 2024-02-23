@@ -44,6 +44,10 @@ public class CrudCoche {
 	public void mostrarCoches() {
 		listaCoche.stream().forEach(System.out::println);
 	}
+	
+	public void mostrar (List <Coche> listaCoches) {
+		listaCoches.stream().forEach(System.out::println);
+	}
 
 	// Método para buscar un coche por su número de bastidor
 
