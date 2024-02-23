@@ -2,28 +2,28 @@ package ejemploConcesionario;
 
 public class Extras {
 
-	private String asientoTapizado;
-	private String calefaccionAsientos;
+	private int asientoTapizado;
+	private int calefaccionAsientos;
 
-	public Extras(String asientoTapizado, String calefaccionAsientos) {
+	public Extras(int asientoTapizado, int calefaccionAsientos) {
 		super();
 		this.asientoTapizado = asientoTapizado;
 		this.calefaccionAsientos = calefaccionAsientos;
 	}
 
-	public String getAsientoTapizado() {
+	public int getAsientoTapizado() {
 		return asientoTapizado;
 	}
 
-	public void setAsientoTapizado(String asientoTapizado) {
+	public void setAsientoTapizado(int asientoTapizado) {
 		this.asientoTapizado = asientoTapizado;
 	}
 
-	public String getCalefaccionAsientos() {
+	public int getCalefaccionAsientos() {
 		return calefaccionAsientos;
 	}
 
-	public void setCalefaccionAsientos(String calefaccionAsientos) {
+	public void setCalefaccionAsientos(int calefaccionAsientos) {
 		this.calefaccionAsientos = calefaccionAsientos;
 	}
 

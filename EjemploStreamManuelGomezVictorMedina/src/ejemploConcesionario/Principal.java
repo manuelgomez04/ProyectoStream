@@ -11,15 +11,15 @@ public class Principal {
 
 		List<Coche> listaCoches = new ArrayList<Coche>();
 		List<Extras> listaExtra = new ArrayList<>();
-		listaExtra.add(new Extras("Tiene", "No tiene"));
+		CrudExtra crudExtra = new CrudExtra(listaExtra);
 
 		CrudCoche crudCoche = new CrudCoche(listaCoches);
 		Concesionario concesionario = new Concesionario(crudCoche);
 
-		String marca, modelo, numBastidor, leerExtras;
+		String marca, modelo, numBastidor;
 		double caballos, precio;
 		boolean extras, vendido = false;
-		int opcion, opcion2 , opcion3, limit, skip;
+		int opcion, opcion2, opcion3, limit, skip, leerExtras1, leerExtras2;
 
 		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
 		Coche coche1 = new Coche("Audi", "A4", "43643Y", 390, 250000, listaExtra, true);
@@ -61,7 +61,7 @@ public class Principal {
 					5 ---> Calcular el precio medio de los coches de una marca
 					6 ---> Ordenar coches por requisitos
 					7 ---> Borrar un coche
-					8 ---> FlatMap (No sé aún)
+					8 ---> Mostrar el coche y sus extras
 					9 ---> Modificar precio de un coche
 					""");
 			opcion = Leer.datoInt();
@@ -80,11 +80,24 @@ public class Principal {
 
 				// Hay que poner los extras bien.
 				System.out.println("El coche tiene los asientos tapizados 1-Si 2-No");
-				leerExtras = Leer.dato();
+				leerExtras1 = Leer.datoInt();
 
-				if (leerExtras.&& leerExtras.equalsIgnoreCase("2")) {
-					
+				while (leerExtras1 != 1 && leerExtras1 != 2) {
+					if (leerExtras1 != 1 && leerExtras1 != 2) {
+						System.out.println("Diga dato válido");
+						leerExtras1 = Leer.datoInt();
+					}
 				}
+
+				System.out.println("El coche tiene calefacción en los asientos 1-Si 2-No");
+				leerExtras2 = Leer.datoInt();
+				while (leerExtras2 != 1 && leerExtras2 != 2) {
+					if (leerExtras2 != 1 && leerExtras2 != 2) {
+						System.out.println("Diga dato válido");
+						leerExtras2 = Leer.datoInt();
+					}
+				}
+				crudExtra.addExtra(new Extras(leerExtras1, leerExtras2));
 
 				coche = new Coche(marca, modelo, numBastidor, caballos, precio, listaExtra, vendido);
 				crudCoche.addCoche(coche);
