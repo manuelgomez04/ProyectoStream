@@ -64,6 +64,7 @@ public class CrudCoche {
 	public List<Coche> findModelos(String modelo) {
 		return listaCoche.stream().filter(coche -> coche.getModelo().equalsIgnoreCase(modelo)).toList();
 	}
+	
 
 	// Método para buscar coches del mismo modelo, pero saltando N coches siguiendo
 	// el orden de insercion

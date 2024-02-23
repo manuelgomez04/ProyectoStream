@@ -1,5 +1,7 @@
 package ejemploConcesionario;
 
+import java.util.List;
+
 public class Coche {
 
 	private String marca;
@@ -7,18 +9,18 @@ public class Coche {
 	private String numBastidor;
 	private double caballos;
 	private double precio;
-	private boolean extras;
+	private List<Extras> listaExtra;
 	private boolean vendido;
 
-	public Coche(String marca, String modelo, String numBastidor, double caballos, double precio, boolean extras,
-			boolean vendido) {
+	public Coche(String marca, String modelo, String numBastidor, double caballos, double precio,
+			List<Extras> listaExtra, boolean vendido) {
 		super();
 		this.marca = marca;
 		this.modelo = modelo;
 		this.numBastidor = numBastidor;
 		this.caballos = caballos;
 		this.precio = precio;
-		this.extras = extras;
+		this.listaExtra = listaExtra;
 		this.vendido = vendido;
 	}
 
@@ -62,12 +64,12 @@ public class Coche {
 		this.precio = precio;
 	}
 
-	public boolean isExtras() {
-		return extras;
+	public List<Extras> getListaExtra() {
+		return listaExtra;
 	}
 
-	public void setExtras(boolean extras) {
-		this.extras = extras;
+	public void setListaExtra(List<Extras> listaExtra) {
+		this.listaExtra = listaExtra;
 	}
 
 	public boolean isVendido() {
@@ -81,7 +83,7 @@ public class Coche {
 	@Override
 	public String toString() {
 		return "Coche [marca=" + marca + ", modelo=" + modelo + ", numBastidor=" + numBastidor + ", caballos="
-				+ caballos + ", precio=" + precio + ", extras=" + extras + ", vendido=" + vendido + "]";
+				+ caballos + ", precio=" + precio + ", listaExtra=" + listaExtra + ", vendido=" + vendido + "]";
 	}
 
 }
