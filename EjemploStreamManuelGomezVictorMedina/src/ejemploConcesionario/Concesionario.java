@@ -2,7 +2,6 @@ package ejemploConcesionario;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.OptionalDouble;
 
 public class Concesionario {
 
@@ -36,9 +35,9 @@ public class Concesionario {
 
 	// Calcular media de precio de coches (Map x2) -- Manuel
 
-	public OptionalDouble calcularMediaPrecioCoches(String marca) {
+	public double calcularMediaPrecioCoches(String marca) {
 
-		return crudCoche.buscarPorMarca(marca).stream().mapToDouble(t -> t.getPrecio()).average();
+		return crudCoche.buscarPorMarca(marca).stream().mapToDouble(t -> t.getPrecio()).average().getAsDouble();
 	}
 
 	// Calcular media de precio de los coches de una marca (FlatMap) -- Manuel

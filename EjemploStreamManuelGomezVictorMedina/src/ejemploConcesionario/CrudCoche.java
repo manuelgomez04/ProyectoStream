@@ -41,11 +41,8 @@ public class CrudCoche {
 	}
 
 	// Mostrar coches (For each)-- Víctor
-	public void mostrarCoches() {
-		listaCoche.stream().forEach(System.out::println);
-	}
-	
-	public void mostrar (List <Coche> listaCoches) {
+
+	public void mostrar(List<Coche> listaCoches) {
 		listaCoches.stream().forEach(System.out::println);
 	}
 
@@ -81,7 +78,7 @@ public class CrudCoche {
 		return listaCoche.stream().filter(coche -> coche.getMarca().equalsIgnoreCase(marca)).toList();
 	}
 
-	//Este metodo sirve para buscar coches que se han vendido
+	// Este metodo sirve para buscar coches que se han vendido
 	public List<Coche> buscarVendidos() {
 
 		return listaCoche.stream().filter(coche -> coche.isVendido()).toList();

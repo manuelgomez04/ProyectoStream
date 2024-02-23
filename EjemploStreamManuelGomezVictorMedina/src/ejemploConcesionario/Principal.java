@@ -24,7 +24,6 @@ public class Principal {
 		crudCoche.addCoche(coche);
 		crudCoche.addCoche(coche1);
 		crudCoche.addCoche(coche2);
-		crudCoche.mostrarCoches();
 
 		do {
 			System.out.println("""
@@ -66,31 +65,11 @@ public class Principal {
 				System.out.println();
 				break;
 			case 2:
-				do {
-					System.out.println("""
-							1-Ordenar por precio
-							2-Ordenar por orden alfabetico
-							""");
-					opcion2 = Leer.datoInt();
-					switch (opcion2) {
-					case 1:
-						for (Coche coche : listaCoches) {
-
-						}
-						concesionario.ordenarPorPrecioMayorAMenor();
-						break;
-					case 2:
-						concesionario.ordenarPorOrdenAlfabeticoMarcaYModelo();
-						break;
-
-					}
-
-				} while (opcion2 != 0);
-
+				crudCoche.mostrar(listaCoches);
 				break;
 			case 3:
 
-				System.out.printf("Las ganancias totales son: %.2f", concesionario.calcularGanancias());
+				System.out.printf("Las ganancias totales son: %.2f€", concesionario.calcularGanancias());
 				System.out.println();
 
 				break;
@@ -100,12 +79,37 @@ public class Principal {
 			case 5:
 				System.out.println("Intoduzca la marca para calcular el precio medio");
 				marca = Leer.dato();
-				System.out.printf("El precio medio de los coches de la marca es: %.2f",
+				System.out.printf("El precio medio de los coches de la marca es: %.2f€",
 						concesionario.calcularMediaPrecioCoches(marca));
 				System.out.println();
 				break;
 			case 6:
+				do {
+					System.out.println("""
+							1-Ordenar por precio
+							2-Ordenar por orden alfabetico
+							0-Salir
+							""");
+					opcion2 = Leer.datoInt();
+					switch (opcion2) {
+					case 1:
 
+						crudCoche.mostrar(concesionario.ordenarPorPrecioMayorAMenor());
+						System.out.println();
+						break;
+					case 2:
+						crudCoche.mostrar(concesionario.ordenarPorOrdenAlfabeticoMarcaYModelo());
+						System.out.println();
+						break;
+					default:
+						System.out.println("Introduzca una opción correcta");
+						break;
+					case 0:
+
+						break;
+					}
+
+				} while (opcion2 != 0);
 				break;
 			case 7:
 				System.out.println("Introduzca el número de bastidos del coche que quiere borrar");
