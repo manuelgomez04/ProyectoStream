@@ -23,9 +23,9 @@ public class Concesionario {
 
 	// Calcular media de precio de coches (Map x2) -- Manuel
 
-	public OptionalDouble calcularMediaPrecioCoches() {
+	public OptionalDouble calcularMediaPrecioCoches(String marca) {
 
-		return crudCoche.getListaCoche().stream().mapToDouble(t -> t.getPrecio()).average();
+		return crudCoche.buscarPorMarca(marca).stream().mapToDouble(t -> t.getPrecio()).average();
 	}
 
 	// Calcular media de precio de los coches de una marca (FlatMap) -- Manuel
