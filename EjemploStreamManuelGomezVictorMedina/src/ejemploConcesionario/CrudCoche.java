@@ -75,12 +75,13 @@ public class CrudCoche {
 		return listaCoche.stream().filter(coche -> coche.getModelo().equalsIgnoreCase(modelo)).skip(skip).toList();
 	}
 
-	// marca ( filter, find Any / First) -- Víctor
+	// Este metodo busca una lista de coches por la marca del coche
 	public List<Coche> buscarPorMarca(String marca) {
 
 		return listaCoche.stream().filter(coche -> coche.getMarca().equalsIgnoreCase(marca)).toList();
 	}
 
+	//Este metodo sirve para buscar coches que se han vendido
 	public List<Coche> buscarVendidos() {
 
 		return listaCoche.stream().filter(coche -> coche.isVendido()).toList();

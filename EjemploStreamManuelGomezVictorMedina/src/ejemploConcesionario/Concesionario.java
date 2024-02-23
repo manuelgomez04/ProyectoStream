@@ -8,6 +8,19 @@ public class Concesionario {
 
 	private CrudCoche crudCoche;
 
+	public Concesionario(CrudCoche crudCoche) {
+		super();
+		this.crudCoche = crudCoche;
+	}
+
+	public CrudCoche getCrudCoche() {
+		return crudCoche;
+	}
+
+	public void setCrudCoche(CrudCoche crudCoche) {
+		this.crudCoche = crudCoche;
+	}
+
 	// Contar vehículos vendidos (Count) --Víctor
 	public long contarCocheVendidos() {
 
@@ -35,8 +48,6 @@ public class Concesionario {
 //		return cc.getListaCoche().stream().flatMap(coche -> coche.().stream());
 //
 //	}
-
-	// método sumar ganancias si se vende vehículo -- Victor
 
 	// Método para ordenar la lista de coches dada por el precio.
 
