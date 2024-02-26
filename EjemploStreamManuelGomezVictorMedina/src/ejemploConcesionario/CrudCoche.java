@@ -24,23 +24,23 @@ public class CrudCoche {
 		return "CrudCoche [listaCoche=" + listaCoche + "]";
 	}
 
-	// Añadir coche -- Víctor
+	// Añadir coche
 	public void addCoche(Coche coche) {
 		listaCoche.add(coche);
 	}
-	// Modificar precio -- Manuel
+	// Modificar precio
 
 	public void modificarPrecio(String numBastidor, double nuevoPrecio) {
 		findByNumBastidor(numBastidor).setPrecio(nuevoPrecio);
 	}
 
-	// Borrar coche --Víctor
+	// Borrar coche
 	public void borrarCoche(String numBastidor) {
 
 		listaCoche.remove(findByNumBastidor(numBastidor));
 	}
 
-	// Mostrar coches (For each)-- Víctor
+	// Mostrar coches (For each)
 
 	public void mostrar(List<Coche> listaCoches) {
 		listaCoches.stream().forEach(System.out::println);
@@ -64,7 +64,6 @@ public class CrudCoche {
 	public List<Coche> findModelos(String modelo) {
 		return listaCoche.stream().filter(coche -> coche.getModelo().equalsIgnoreCase(modelo)).toList();
 	}
-	
 
 	// Método para buscar coches del mismo modelo, pero saltando N coches siguiendo
 	// el orden de insercion

@@ -20,27 +20,27 @@ public class Concesionario {
 		this.crudCoche = crudCoche;
 	}
 
-	// Contar vehículos vendidos (Count) --Víctor
+	// Contar vehículos vendidos (Count)
 	public long contarCocheVendidos() {
 
 		return crudCoche.buscarVendidos().stream().count();
 	}
 
-	// Calcular ganancias si se venden todos (Map) --Manuel
+	// Calcular ganancias si se venden todos (Map)
 
 	public double calcularGanancias() {
 
 		return crudCoche.getListaCoche().stream().mapToDouble(t -> t.getPrecio()).sum();
 	}
 
-	// Calcular media de precio de coches (Map x2) -- Manuel
+	// Calcular media de precio de coches (Map x2)
 
 	public double calcularMediaPrecioCoches(String marca) {
 
 		return crudCoche.buscarPorMarca(marca).stream().mapToDouble(t -> t.getPrecio()).average().getAsDouble();
 	}
 
-	// Calcular media de precio de los coches de una marca (FlatMap) -- Manuel
+	// Calcular media de precio de los coches de una marca (FlatMap)
 
 //	public OptionalDouble calcularMediaPrecioPorModelo(String modelo) {
 //
