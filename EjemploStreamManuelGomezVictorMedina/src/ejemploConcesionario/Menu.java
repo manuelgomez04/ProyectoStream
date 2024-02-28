@@ -15,6 +15,7 @@ public class Menu {
 		CrudCoche crudCoche = new CrudCoche(listaCoches);
 		Concesionario concesionario = new Concesionario(crudCoche);
 
+		// Variables
 		String marca, modelo, numBastidor;
 		String asientoCalefaccion = "Asiento con calefacción", pantalla = "Pantalla",
 				techoRetractil = "Techo retráctil";
@@ -25,6 +26,7 @@ public class Menu {
 		Extras extra2 = new Extras(pantalla);
 		Extras extra3 = new Extras(techoRetractil);
 
+		// Introduccion de objetos a un list para ya tener algunos ejemplos
 		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, false);
 		Coche coche1 = new Coche("Audi", "A4", "43643Y", 390, 250000, true);
 		Coche coche2 = new Coche("Peugeot", "P5", "7623U", 600, 590000, true);
@@ -125,7 +127,7 @@ public class Menu {
 							2 ---> Mostrar lista de coches por modelos, limitando el resultado a N coches.
 							3 ---> Mostrar el coche por el número de bastidor.
 							4 ---> Mostrar lista de coches por marca.
-							0 ---> Volver
+							0 ---> Salir
 							""");
 					opcion3 = Leer.datoInt();
 
