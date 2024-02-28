@@ -11,22 +11,33 @@ public class Menu {
 
 		List<Coche> listaCoches = new ArrayList<Coche>();
 		List<Extras> listaExtra = new ArrayList<>();
-		CrudExtra crudExtra = new CrudExtra(listaExtra);
 
 		CrudCoche crudCoche = new CrudCoche(listaCoches);
 		Concesionario concesionario = new Concesionario(crudCoche);
 
 		String marca, modelo, numBastidor;
+		String asientoCalefaccion = "Asiento con calefacción", pantalla = "Pantalla",
+				techoRetractil = "Techo retráctil";
 		double caballos, precio;
 		boolean vendido = false;
 		int opcion, opcion2, opcion3, limit, skip, leerExtras1, leerExtras2;
+		Extras extra1 = new Extras(asientoCalefaccion);
+		Extras extra2 = new Extras(pantalla);
+		Extras extra3 = new Extras(techoRetractil);
 
-		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, listaExtra, false);
-		Coche coche1 = new Coche("Audi", "A4", "43643Y", 390, 250000, listaExtra, true);
-		Coche coche2 = new Coche("Peugeot", "P5", "7623U", 600, 590000, listaExtra, true);
-		Coche coche3 = new Coche("Seat", "Ibiza", "7923R", 450, 400000, listaExtra, false);
-		Coche coche4 = new Coche("Seat", "Leon", "1630L", 450, 400000, listaExtra, false);
-		Coche coche5 = new Coche("Seat", "Leon", "0258G", 450, 400000, listaExtra, true);
+		Coche coche = new Coche("Seat", "Leon", "6425T", 450, 400000, false);
+		Coche coche1 = new Coche("Audi", "A4", "43643Y", 390, 250000, true);
+		Coche coche2 = new Coche("Peugeot", "P5", "7623U", 600, 590000, true);
+		Coche coche3 = new Coche("Seat", "Ibiza", "7923R", 450, 400000, false);
+		Coche coche4 = new Coche("Seat", "Leon", "1630L", 450, 400000, false);
+		Coche coche5 = new Coche("Seat", "Leon", "0258G", 450, 400000, true);
+
+		coche.addExtra(extra1);
+		coche1.addExtra(extra2);
+		coche2.addExtra(extra3);
+		coche3.addExtra(extra2);
+		coche4.addExtra(extra1);
+		coche5.addExtra(extra3);
 
 		crudCoche.addCoche(coche);
 		crudCoche.addCoche(coche1);
@@ -78,28 +89,32 @@ public class Menu {
 				System.out.println("Introduzca el precio del coche");
 				precio = Leer.datoDouble();
 
-				// Hay que poner los extras bien.
-				System.out.println("El coche tiene los asientos tapizados 1-Si 2-No");
+				coche = new Coche(marca, modelo, numBastidor, caballos, precio, vendido);
+
+				System.out.println("""
+						0 ---> Coche no tiene extras
+						1 ---> Asientos tapizados
+						2 ---> Pantalla
+						3 ---> Techo Retráctil
+						""");
 				leerExtras1 = Leer.datoInt();
 
-				while (leerExtras1 != 1 && leerExtras1 != 2) {
-					if (leerExtras1 != 1 && leerExtras1 != 2) {
-						System.out.println("Diga dato válido");
-						leerExtras1 = Leer.datoInt();
-					}
+				switch (leerExtras1) {
+				case 1:
+					coche.addExtra(extra1);
+					break;
+				case 2:
+					coche.addExtra(extra2);
+					break;
+				case 3:
+					coche.addExtra(extra3);
+					break;
+				case 0:
+					break;
+				default:
+					System.out.println("Diga un dato válido");
+					break;
 				}
-
-				System.out.println("El coche tiene calefacción en los asientos 1-Si 2-No");
-				leerExtras2 = Leer.datoInt();
-				while (leerExtras2 != 1 && leerExtras2 != 2) {
-					if (leerExtras2 != 1 && leerExtras2 != 2) {
-						System.out.println("Diga dato válido");
-						leerExtras2 = Leer.datoInt();
-					}
-				}
-				crudExtra.addExtra(new Extras(leerExtras1, leerExtras2));
-
-				coche = new Coche(marca, modelo, numBastidor, caballos, precio, listaExtra, vendido);
 				crudCoche.addCoche(coche);
 				System.out.println();
 				break;
@@ -167,11 +182,7 @@ public class Menu {
 				System.out.println(concesionario.contarCocheVendidos());
 				break;
 			case 5:
-				System.out.println("Intoduzca la marca para calcular el precio medio");
-				marca = Leer.dato();
-				System.out.printf("El precio medio de los coches de la marca es: %.2f€",
-						concesionario.calcularMediaPrecioCoches(marca));
-				System.out.println();
+				concesionario.queExtraTieneCadaCoche();
 				break;
 			case 6:
 				do {

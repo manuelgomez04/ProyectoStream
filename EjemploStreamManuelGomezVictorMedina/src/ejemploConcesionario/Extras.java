@@ -2,34 +2,24 @@ package ejemploConcesionario;
 
 public class Extras {
 
-	private int asientoTapizado;
-	private int calefaccionAsientos;
+	private String tipoExtras;
 
-	public Extras(int asientoTapizado, int calefaccionAsientos) {
+	public Extras(String tipoExtras) {
 		super();
-		this.asientoTapizado = asientoTapizado;
-		this.calefaccionAsientos = calefaccionAsientos;
+		this.tipoExtras = tipoExtras;
 	}
 
-	public int getAsientoTapizado() {
-		return asientoTapizado;
+	public String getTipoExtras() {
+		return tipoExtras;
 	}
 
-	public void setAsientoTapizado(int asientoTapizado) {
-		this.asientoTapizado = asientoTapizado;
-	}
-
-	public int getCalefaccionAsientos() {
-		return calefaccionAsientos;
-	}
-
-	public void setCalefaccionAsientos(int calefaccionAsientos) {
-		this.calefaccionAsientos = calefaccionAsientos;
+	public void setTipoExtras(String tipoExtras) {
+		this.tipoExtras = tipoExtras;
 	}
 
 	@Override
 	public String toString() {
-		return "Extras [asientoTapizado=" + asientoTapizado + ", calefaccionAsientos=" + calefaccionAsientos + "]";
+		return "Extras [tipoExtras=" + tipoExtras + "]";
 	}
 
 }

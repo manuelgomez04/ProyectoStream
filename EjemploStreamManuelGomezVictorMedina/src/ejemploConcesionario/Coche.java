@@ -1,5 +1,6 @@
 package ejemploConcesionario;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Coche {
@@ -9,7 +10,7 @@ public class Coche {
 	private String numBastidor;
 	private double caballos;
 	private double precio;
-	private List<Extras> listaExtra;
+	private List<Extras> listaExtra = new ArrayList<Extras>();
 	private boolean vendido;
 
 	public Coche(String marca, String modelo, String numBastidor, double caballos, double precio,
@@ -21,6 +22,16 @@ public class Coche {
 		this.caballos = caballos;
 		this.precio = precio;
 		this.listaExtra = listaExtra;
+		this.vendido = vendido;
+	}
+
+	public Coche(String marca, String modelo, String numBastidor, double caballos, double precio, boolean vendido) {
+		super();
+		this.marca = marca;
+		this.modelo = modelo;
+		this.numBastidor = numBastidor;
+		this.caballos = caballos;
+		this.precio = precio;
 		this.vendido = vendido;
 	}
 
@@ -86,4 +97,7 @@ public class Coche {
 				+ caballos + ", precio=" + precio + ", listaExtra=" + listaExtra + ", vendido=" + vendido + "]";
 	}
 
+	public void addExtra(Extras e) {
+		listaExtra.add(e);
+	}
 }

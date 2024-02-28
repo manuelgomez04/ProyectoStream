@@ -2,6 +2,7 @@ package ejemploConcesionario;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class Concesionario {
 
@@ -40,13 +41,16 @@ public class Concesionario {
 		return crudCoche.buscarPorMarca(marca).stream().mapToDouble(t -> t.getPrecio()).average().getAsDouble();
 	}
 
-	// Calcular media de precio de los coches de una marca (FlatMap)
+	// Método para conocer los extras de un coche
 
-//	public OptionalDouble calcularMediaPrecioPorModelo(String modelo) {
-//
-//		return cc.getListaCoche().stream().flatMap(coche -> coche.().stream());
-//
-//	}
+	public void queExtraTieneCadaCoche() {
+		crudCoche.getListaCoche().stream().map(coche -> coche.getListaExtra()).flatMap(vi -> vi.stream())
+				.forEach((Consumer<? super Extras>) new Consumer<Extras>() {
+					public void accept(Extras e) {
+						System.out.println(e.getTipoExtras());
+					}
+				});
+	}
 
 	// Método para ordenar la lista de coches dada por el precio.
 
@@ -65,4 +69,5 @@ public class Concesionario {
 		return crudCoche.getListaCoche().stream().sorted(compararMarcaYModelo).toList();
 
 	}
+
 }
