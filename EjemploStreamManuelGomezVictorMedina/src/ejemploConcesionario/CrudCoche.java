@@ -50,7 +50,7 @@ public class CrudCoche {
 
 	public Coche findByNumBastidor(String numBastidor) {
 
-		return listaCoche.stream().filter(coche -> coche.getNumBastidor().equalsIgnoreCase(numBastidor)).findFirst()
+		return listaCoche.stream().filter(coche -> coche.getNumBastidor().equalsIgnoreCase(numBastidor)).findAny()
 				.get();
 	}
 
