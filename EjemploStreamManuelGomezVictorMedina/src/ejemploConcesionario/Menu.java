@@ -71,7 +71,7 @@ public class Menu {
 					2 ---> Mostrar los coches del concesionario(Todos los mostrar)
 					3 ---> Calcular ganancias si se venden todos los coches
 					4 ---> Contar los coches vendidos
-					5 ---> Calcular el precio medio de los coches de una marca
+					5 ---> Comprobar que extras tiene cada coche
 					6 ---> Ordenar coches por requisitos
 					7 ---> Borrar un coche
 					8 ---> Mostrar el coche y sus extras
