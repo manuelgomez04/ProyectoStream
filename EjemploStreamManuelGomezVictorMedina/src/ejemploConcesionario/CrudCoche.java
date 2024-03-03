@@ -1,6 +1,7 @@
 package ejemploConcesionario;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class CrudCoche {
 
@@ -81,7 +82,7 @@ public class CrudCoche {
 	// Este metodo sirve para buscar coches que se han vendido
 	public List<Coche> buscarVendidos() {
 
-		return listaCoche.stream().filter(coche -> coche.isVendido()).toList();
+		return listaCoche.stream().filter(coche -> coche.isVendido()).collect(Collectors.toList());
 	}
 
 }
